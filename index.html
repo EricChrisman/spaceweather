@@ -51,8 +51,8 @@ html
             border-radius: 8px;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
         iframe {
@@ -67,12 +67,12 @@ html
         }
     </style>
     <script>
-        // Automatically reloads the images every 3 minutes to keep charts live
+        // Reloads the elements every 3 minutes to keep charts moving live
         setInterval(function() {
-            const cacheBuster = "?t=" + new Date().getTime();
-            document.getElementById('enlil-spiral').src = "https://noaa.gov" + cacheBuster;
-            document.getElementById('coronal-hole').src = "https://noaa.gov" + cacheBuster;
-            document.getElementById('sunspots').src = "https://noaa.gov" + cacheBuster;
+            const buster = "?t=" + new Date().getTime();
+            document.getElementById('geoelectric-3d').src = "https://noaa.gov" + buster;
+            document.getElementById('enlil-spiral').src = "https://noaa.gov" + buster;
+            document.getElementById('sunspots').src = "https://noaa.gov" + buster;
         }, 180000); 
     </script>
 </head>
@@ -82,40 +82,40 @@ html
 
     <div class="grid-container">
         
-        <!-- NASA SDO CORONAL HOLE MAP -->
+        <!-- NOAA 3D GEOMETRIC FIELD CONUS MAP -->
         <div class="card">
-            <h2>Coronal Holes & Magnetic Synoptic Map</h2>
+            <h2>Empirical EMTF - 3D Geoelectric Field Model</h2>
             <div class="media-container">
-                <img id="coronal-hole" src="https://noaa.gov" alt="Coronal Hole Map">
+                <img id="geoelectric-3d" src="https://noaa.gov" alt="NOAA 3D Geoelectric Field Model">
             </div>
-            <div class="timestamp">Sourced Live via NOAA SWPC</div>
+            <div class="timestamp">Real-Time CONUS 1-Minute Ground Induction Levels</div>
         </div>
 
         <!-- NOAA WSA-ENLIL SPIRAL MODEL -->
         <div class="card">
             <h2>WSA-Enlil Solar Wind Prediction Spiral</h2>
             <div class="media-container">
-                <img id="enlil-spiral" src="https://noaa.gov" alt="WSA-Enlil Spiral">
+                <img id="enlil-spiral" src="https://noaa.gov" alt="WSA-Enlil Spiral Model">
             </div>
-            <div class="timestamp">Updates dynamically based on solar model runs</div>
+            <div class="timestamp">Dynamic Coronal Hole Particle Propagation</div>
         </div>
 
         <!-- NASA SDO SUNSPOT CONTINUUM MAP -->
         <div class="card">
             <h2>SDO/HMI Sunspot Continuum Map</h2>
             <div class="media-container">
-                <img id="sunspots" src="https://noaa.gov" alt="Sunspot Map">
+                <img id="sunspots" src="https://noaa.gov" alt="Sunspot Map Feed">
             </div>
-            <div class="timestamp">Real-time Solar Dynamics Observatory Feed</div>
+            <div class="timestamp">Real-time Solar Dynamics Observatory Continuums</div>
         </div>
 
-        <!-- NOAA REAL-TIME MAG / DENSITY / SPEED CHARTS -->
+        <!-- NOAA REAL-TIME PLASMA & SOLAR WIND MONITOR -->
         <div class="card">
-            <h2>Real-Time Solar Wind & EMF Tracking Metrics</h2>
+            <h2>Real-Time Solar Wind Plasma Metrics</h2>
             <div class="media-container">
-                <iframe src="https://noaa.gov" title="NOAA Real-time Solar Wind"></iframe>
+                <iframe src="https://noaa.gov" title="NOAA Real-time Solar Wind Telemetry"></iframe>
             </div>
-            <div class="timestamp">Live 1-Minute Satellite Cadence Data Block</div>
+            <div class="timestamp">Live 1-Minute Satellite Cadence Data</div>
         </div>
 
     </div>
