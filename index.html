@@ -20,9 +20,9 @@ html
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 25px;
+            max-width: 1600px;
             margin: 0 auto;
         }
         .card {
@@ -32,6 +32,8 @@ html
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             border: 1px solid #334155;
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
         .card h2 {
             margin-top: 0;
@@ -39,42 +41,27 @@ html
             color: #94a3b8;
             border-bottom: 1px solid #334155;
             padding-bottom: 10px;
+            margin-bottom: 15px;
         }
         .media-container {
             width: 100%;
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            height: 450px;
             background-color: #0f172a;
             border-radius: 8px;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            overflow: hidden;
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            background-color: #ffffff;
         }
         .timestamp {
             font-size: 0.8rem;
             color: #64748b;
-            margin-top: 10px;
+            margin-top: 12px;
         }
     </style>
-    <script>
-        // Reloads the elements every 3 minutes to keep charts moving live
-        setInterval(function() {
-            const buster = "?t=" + new Date().getTime();
-            document.getElementById('geoelectric-3d').src = "https://noaa.gov" + buster;
-            document.getElementById('enlil-spiral').src = "https://noaa.gov" + buster;
-            document.getElementById('sunspots').src = "https://noaa.gov" + buster;
-        }, 180000); 
-    </script>
 </head>
 <body>
 
@@ -82,38 +69,38 @@ html
 
     <div class="grid-container">
         
-        <!-- NOAA 3D GEOMETRIC FIELD CONUS MAP -->
+        <!-- SECURE 3D GEOELECTRIC MAP INTERACTIVE LINK -->
         <div class="card">
             <h2>Empirical EMTF - 3D Geoelectric Field Model</h2>
             <div class="media-container">
-                <img id="geoelectric-3d" src="https://noaa.gov" alt="NOAA 3D Geoelectric Field Model">
+                <iframe src="https://spaceweather.gov" title="NOAA Empirical 3D Geoelectric Field Model"></iframe>
             </div>
-            <div class="timestamp">Real-Time CONUS 1-Minute Ground Induction Levels</div>
+            <div class="timestamp">Interactive View: Select 'EMPIRICAL EMTF - 3D MODEL' tab inside panel</div>
         </div>
 
-        <!-- NOAA WSA-ENLIL SPIRAL MODEL -->
+        <!-- SECURE ENLIL SPIRAL MODEL LINK -->
         <div class="card">
             <h2>WSA-Enlil Solar Wind Prediction Spiral</h2>
             <div class="media-container">
-                <img id="enlil-spiral" src="https://noaa.gov" alt="WSA-Enlil Spiral Model">
+                <iframe src="https://spaceweather.gov" title="NOAA WSA-Enlil Solar Wind Model"></iframe>
             </div>
-            <div class="timestamp">Dynamic Coronal Hole Particle Propagation</div>
+            <div class="timestamp">Dynamic Coronal Hole & Flare Particle Forecasts</div>
         </div>
 
-        <!-- NASA SDO SUNSPOT CONTINUUM MAP -->
+        <!-- SECURE SUNSPOT CONTINUUM MAP LINK -->
         <div class="card">
-            <h2>SDO/HMI Sunspot Continuum Map</h2>
+            <h2>SDO/HMI Sunspot & Coronal Region Map</h2>
             <div class="media-container">
-                <img id="sunspots" src="https://noaa.gov" alt="Sunspot Map Feed">
+                <iframe src="https://spaceweather.gov" title="NOAA Solar Synoptic Mapping"></iframe>
             </div>
-            <div class="timestamp">Real-time Solar Dynamics Observatory Continuums</div>
+            <div class="timestamp">Real-time Solar Dynamics Observatory Data</div>
         </div>
 
-        <!-- NOAA REAL-TIME PLASMA & SOLAR WIND MONITOR -->
+        <!-- SECURE PLASMA & SOLAR WIND MONITOR LINK -->
         <div class="card">
             <h2>Real-Time Solar Wind Plasma Metrics</h2>
             <div class="media-container">
-                <iframe src="https://noaa.gov" title="NOAA Real-time Solar Wind Telemetry"></iframe>
+                <iframe src="https://spaceweather.gov" title="NOAA Real-time Solar Wind Telemetry"></iframe>
             </div>
             <div class="timestamp">Live 1-Minute Satellite Cadence Data</div>
         </div>
