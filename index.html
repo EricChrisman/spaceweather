@@ -4,7 +4,7 @@ html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Weather Tracker</title>
+    <title>Space Weather Tracker & Workspace</title>
     <style>
         body {
             background-color: #0b0f19;
@@ -16,93 +16,126 @@ html
         h1 {
             text-align: center;
             color: #38bdf8;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #64748b;
             margin-bottom: 30px;
+            font-size: 1rem;
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         .card {
             background-color: #1e293b;
             border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             border: 1px solid #334155;
-            text-align: center;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: #38bdf8;
         }
         .card h2 {
             margin-top: 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            color: #f1f5f9;
+        }
+        .card p {
             color: #94a3b8;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
-        .media-container {
-            width: 100%;
-            height: 450px;
-            background-color: #0f172a;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
+        .launch-btn {
+            background-color: #0284c7;
+            color: #ffffff;
             border: none;
-            background-color: #ffffff;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
         }
-        .timestamp {
-            font-size: 0.8rem;
-            color: #64748b;
-            margin-top: 12px;
+        .launch-btn:hover {
+            background-color: #0369a1;
+        }
+        .source-tag {
+            font-size: 0.75rem;
+            color: #475569;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
     </style>
 </head>
 <body>
 
-    <h1>Live Space Weather Dashboard</h1>
+    <h1>Live Space Weather Dashboard Portal</h1>
+    <div class="subtitle">Direct-feed telemetry links optimized for external network security policies</div>
 
     <div class="grid-container">
         
-        <!-- SECURE 3D GEOELECTRIC MAP INTERACTIVE LINK -->
+        <!-- PANEL: EMPIRICAL EMTF - 3D MODEL -->
         <div class="card">
-            <h2>Empirical EMTF - 3D Geoelectric Field Model</h2>
-            <div class="media-container">
-                <iframe src="https://spaceweather.gov" title="NOAA Empirical 3D Geoelectric Field Model"></iframe>
+            <div>
+                <h2>Empirical EMTF - 3D Geoelectric Field</h2>
+                <p>Track real-time 1-minute ground-level induction hazards and magnetic field warping across the United States continental landmass.</p>
             </div>
-            <div class="timestamp">Interactive View: Select 'EMPIRICAL EMTF - 3D MODEL' tab inside panel</div>
+            <div>
+                <a class="launch-btn" href="https://spaceweather.gov" target="_blank">Launch 3D Model Map</a>
+                <div class="source-tag">Source: NOAA / SWPC Data Feed</div>
+            </div>
         </div>
 
-        <!-- SECURE ENLIL SPIRAL MODEL LINK -->
+        <!-- PANEL: WSA-ENLIL SPIRAL -->
         <div class="card">
-            <h2>WSA-Enlil Solar Wind Prediction Spiral</h2>
-            <div class="media-container">
-                <iframe src="https://spaceweather.gov" title="NOAA WSA-Enlil Solar Wind Model"></iframe>
+            <div>
+                <h2>WSA-Enlil Solar Wind Prediction</h2>
+                <p>View the live mapped particle propagation spiral showing fast solar wind streams and CMEs executing transit lines from the Sun toward Earth.</p>
             </div>
-            <div class="timestamp">Dynamic Coronal Hole & Flare Particle Forecasts</div>
+            <div>
+                <a class="launch-btn" href="https://spaceweather.gov" target="_blank">Launch Prediction Spiral</a>
+                <div class="source-tag">Source: NASA / NOAA Model Runs</div>
+            </div>
         </div>
 
-        <!-- SECURE SUNSPOT CONTINUUM MAP LINK -->
+        <!-- PANEL: SUNSPOT CONTINUUM MAP -->
         <div class="card">
-            <h2>SDO/HMI Sunspot & Coronal Region Map</h2>
-            <div class="media-container">
-                <iframe src="https://spaceweather.gov" title="NOAA Solar Synoptic Mapping"></iframe>
+            <div>
+                <h2>SDO/HMI Sunspot Continuum</h2>
+                <p>Analyze real-time visible-light solar disk layouts showing active sunspot configurations currently rotated toward Earth baseline coordinates.</p>
             </div>
-            <div class="timestamp">Real-time Solar Dynamics Observatory Data</div>
+            <div>
+                <a class="launch-btn" href="https://spaceweather.gov" target="_blank">Launch Sunspot Feed</a>
+                <div class="source-tag">Source: NASA Solar Dynamics Obs.</div>
+            </div>
         </div>
 
-        <!-- SECURE PLASMA & SOLAR WIND MONITOR LINK -->
+        <!-- PANEL: PLASMA & SOLAR WIND CHARTS -->
         <div class="card">
-            <h2>Real-Time Solar Wind Plasma Metrics</h2>
-            <div class="media-container">
-                <iframe src="https://spaceweather.gov" title="NOAA Real-time Solar Wind Telemetry"></iframe>
+            <div>
+                <h2>Real-Time Solar Wind Telemetry</h2>
+                <p>Monitor live satellite data blocks streaming incoming interplanetary magnetic field alignments (Bt, Bz) alongside real-time wind density and speed metrics.</p>
             </div>
-            <div class="timestamp">Live 1-Minute Satellite Cadence Data</div>
+            <div>
+                <a class="launch-btn" href="https://spaceweather.gov" target="_blank">Launch Real-Time Charts</a>
+                <div class="source-tag">Source: NOAA Space Weather Dashboard</div>
+            </div>
         </div>
 
     </div>
